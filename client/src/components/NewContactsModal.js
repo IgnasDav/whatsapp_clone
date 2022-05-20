@@ -10,7 +10,7 @@ function NewContactsModal({ closeModal }) {
   const { createContact, contacts } = useContext(ContactsContext);
   function handleSubmit(e) {
     e.preventDefault();
-    // createContact(idRef.current.value, nameRef.current.value);
+    createContact(idRef.current.value, nameRef.current.value);
     closeModal();
   }
   //className variables

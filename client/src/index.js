@@ -5,12 +5,17 @@ import "./index.css";
 //Context
 import { LoginProvider } from "./context/LoginContext";
 import { ContactsProvider } from "./context/ContactsContext";
+import { ConversationsProvider } from "./context/ConversationsContext";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <React.StrictMode>
     <LoginProvider>
       <ContactsProvider>
-        <App />
+        <ConversationsProvider>
+          <App />
+        </ConversationsProvider>
       </ContactsProvider>
     </LoginProvider>
   </React.StrictMode>
