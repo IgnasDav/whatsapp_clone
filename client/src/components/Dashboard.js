@@ -8,7 +8,7 @@ function Dashboard() {
   const { id } = useContext(LoginContext);
   const navigate = useNavigate();
   useEffect(() => {
-    if (id == null) navigate("/login");
+    if (id === null) navigate("/login");
   }, [id, navigate]);
 
   return (

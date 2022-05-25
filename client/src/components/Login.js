@@ -1,11 +1,13 @@
-import { useRef, useContext } from "react";
+import { useRef, useContext, useEffect } from "react";
 import { v4 as uuidV4 } from "uuid";
+import { useNavigate } from "react-router-dom";
 //Context
 import LoginContext from "../context/LoginContext";
 //Components
 import Button from "./Button";
 function Login() {
   const { id, onIdSubmit } = useContext(LoginContext);
+  const navigate = useNavigate();
   const idRef = useRef();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,6 +16,11 @@ function Login() {
   const createNewUser = () => {
     onIdSubmit(uuidV4());
   };
+  useEffect(() => {
+    if (id.length > 0) {
+      navigate("/");
+    }
+  }, [id, navigate]);
 
   return (
     <div className=" flex w-screen justify-center items-center h-screen">
